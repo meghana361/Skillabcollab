@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+	        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            width: 80vw; /* 80% of the viewport width */
+            max-width: 800px;
+            min-height: 80vh;
+            border: solid 2px black;
+            margin: auto;
+            padding: 10px;
+            gap: 10px; /* Adds space between boxes */
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            overflow: hidden;
+            word-wrap: break-word;
+            white-space: normal;
+            width: 30%; /* Each box takes up 30% width */
+            min-width: 200px; /* Prevents shrinking too much */
+            min-height: 200px; /* Ensures text has enough space */
+            padding: 10px;
+            border: 1px solid gray;
+            font-size: clamp(1rem, 2vw, 2rem); /* Responsive text size */
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column; /* Stack boxes on small screens */
+                align-items: center;
+            }
+            .box {
+                width: 90%; /* Full width on small screens */
+                font-size: clamp(1.5rem, 4vw, 3rem); /* Larger text for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">
+        Box 1: This text will scale up and down based on screen size and will **not overlap**.
+    </div>
+    <div class="box">
+        Box 2: Another box with longer text. It will wrap inside the box properly.
+    </div>
+    <div class="box">
+        Box 3: Extra box to show how everything stays **responsive and readable**.
+    </div>
+<div class="box">
+<ol type="number">
+<li>
+coffee
+</li>
+
+<li>
+Tea
+</li>
+</div>
+
+</body>
+</html>
